@@ -155,8 +155,9 @@
   transition: transform 0.3s ease;
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
+.skill-card.active:hover {
+  transform: translateY(-7px); /* Slightly increased to make it noticeable */
+  background-color: #d4ebff;    /* Optional: change background on hover too */
 }
 
 .skill-img {
@@ -176,11 +177,10 @@
 }
 
 
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
+.contact-icons a {
+  display: inline-block;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
 .contact-icon {
@@ -189,6 +189,11 @@
   border-radius: 12px;
   padding: 0.5rem;
   transition: background 0.3s ease;
+}
+
+.contact-icons a:hover {
+  background-color: #57a5ff;
+  transform: scale(1.1); /* Adds a nice "pop" effect */
 }
 
 .contact-icon:hover {
@@ -232,7 +237,8 @@
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 1s ease-out; /* Controls how smooth the fade is */
+  /* transition: all 1s ease-out; Controls how smooth the fade is */
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 /* The visible state (triggered by JavaScript) */
@@ -244,7 +250,7 @@
 /* Initial state: hidden and slightly lower */
 .skill-card.reveal {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(10px);
   /* This transition handles the fade-in; the hover transition remains separate */
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
@@ -252,7 +258,6 @@
 /* Visible state: triggered by JS */
 .skill-card.reveal.active {
   opacity: 1;
-  transform: translateY(0);
 }
 
 @media screen and (min-width: 769px) {
@@ -403,7 +408,12 @@
     gap: 1rem;
   }
 
-  .linkedin, .github, .envelope {
+  /* .linkedin, .github, .envelope {
+    width: 35px;
+    padding: 0.4rem;
+  } */
+
+  .contact-icon {
     width: 35px;
     padding: 0.4rem;
   }
