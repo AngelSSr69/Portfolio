@@ -229,26 +229,83 @@
   color: #ffffff;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-out; /* Controls how smooth the fade is */
+}
+
+/* The visible state (triggered by JavaScript) */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial state: hidden and slightly lower */
+.skill-card.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  /* This transition handles the fade-in; the hover transition remains separate */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Visible state: triggered by JS */
+.skill-card.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media screen and (min-width: 769px) {
-  .angel-img2 {
+  /* .angel-img2 {
     display: none;
-  }
+  } */
 }
 
 
 @media screen and (max-width: 768px) {
   
-  .angel {
-    flex-direction: column;
+  /* .angel {
+    flex-direction: column-reverse; 
     text-align: center;
     padding: 2rem 5%;
+  } */
+
+  .angel {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
   }
 
-  .angel-text {
+  /* .angel-text {
     max-width: 100%;
     margin-bottom: 2rem;
+  } */
+
+  .angel-text {
+    display: contents; 
   }
 
+  /* .angel-intro {
+    flex-direction: column-reverse;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  } */
+
+  .angel-intro {
+    order: 1;
+  }
+
+  .angel-img {
+    order: 2; /* This moves the image to the middle */
+    margin: 0 auto;
+  }
+
+  .about-me {
+    order: 3;
+  }
+
+/*
   .angel-text .h1 {
     font-size: 2rem;
   }
@@ -262,20 +319,34 @@
     line-height: 1.4;
     margin: 0 auto;
     max-width: 90%;
+  }*/
+  .angel-text .angel-h1 { 
+  font-size: 2rem;
+  }
+  .angel-text .angel-h3 { 
+  font-size: 1rem; 
+  }
+  .angel-text .about-p { 
+    font-size: 0.9rem; 
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 90%;
   }
 
-  .angel-img2 {
+  
+
+  /* .angel-img2 {
     flex: 1 1 45%;
     display: flex;
     justify-content: center;
     max-width: 100%;
     display: flex;
     justify-content: center;
-  }
+  } */
 
-  .angel-img {
+  /* .angel-img {
     display: none;
-  }
+  } */
 
   .img-card {
     max-width: 300px;
