@@ -95,13 +95,6 @@
   justify-items: center;
 }
 
-/* .project-card {
-  max-width: 300px;
-  padding: 1.5rem;
-  border-radius: 12px;
-  text-align: center;
-} */
-
 .project-card {
   max-width: 300px;
   padding: 1.5rem;
@@ -178,13 +171,11 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* 1. The Container: Sets the perspective for 3D */
 .skill-card {
   perspective: 1000px;
   cursor: pointer;
 }
 
-/* 2. The Inner Wrapper: This actually rotates */
 .card-inner {
   position: relative;
   width: 100%;
@@ -196,12 +187,10 @@
   border-radius: 8px;
 }
 
-/* 3. The Flip Action */
 .skill-card.is-flipped .card-inner {
   transform: rotateY(180deg);
 }
 
-/* 4. Common styles for both faces */
 .card-front, .card-back {
   position: absolute;
   width: 100%;
@@ -216,19 +205,16 @@
   box-sizing: border-box;
 }
 
-/* 5. Style the Front */
 .card-front {
   color: black;
 }
 
-/* 6. Style the Back */
 .card-back {
   background-color: #d4ebff;
   color: #0029ff;
   transform: rotateY(180deg); /* Initial state is flipped */
 }
 
-/* Back-side text styling */
 .skill-desc {
   font-size: 0.75rem;
   font-weight: bold;
@@ -275,7 +261,7 @@
 
 .contact-icons a:hover {
   background-color: #57a5ff;
-  transform: scale(1.1); /* Adds a nice "pop" effect */
+  transform: scale(1.1);
 }
 
 .contact-icon:hover {
@@ -319,7 +305,6 @@
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  /* transition: all 1s ease-out; Controls how smooth the fade is */
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -342,20 +327,9 @@
   opacity: 1;
 }
 
-@media screen and (min-width: 769px) {
-  /* .angel-img2 {
-    display: none;
-  } */
-}
-
 
 @media screen and (max-width: 768px) {
   
-  /* .angel {
-    flex-direction: column-reverse; 
-    text-align: center;
-    padding: 2rem 5%;
-  } */
 
   .angel {
     display: grid;
@@ -364,20 +338,9 @@
     gap: 1.5rem;
   }
 
-  /* .angel-text {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  } */
-
   .angel-text {
     display: contents; 
   }
-
-  /* .angel-intro {
-    flex-direction: column-reverse;
-    max-width: 100%;
-    margin-bottom: 2rem;
-  } */
 
   .angel-intro {
     order: 1;
@@ -392,21 +355,6 @@
     order: 3;
   }
 
-/*
-  .angel-text .h1 {
-    font-size: 2rem;
-  }
-
-  .angel-text .h3 {
-    font-size: 1rem;
-  }
-
-  .angel-text .p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0 auto;
-    max-width: 90%;
-  }*/
   .angel-text .angel-h1 { 
   font-size: 2rem;
   }
@@ -420,20 +368,6 @@
     max-width: 90%;
   }
 
-  
-
-  /* .angel-img2 {
-    flex: 1 1 45%;
-    display: flex;
-    justify-content: center;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-  } */
-
-  /* .angel-img {
-    display: none;
-  } */
 
   .img-card {
     max-width: 300px;
@@ -489,11 +423,6 @@
     justify-content: center;
     gap: 1rem;
   }
-
-  /* .linkedin, .github, .envelope {
-    width: 35px;
-    padding: 0.4rem;
-  } */
 
   .contact-icon {
     width: 35px;
