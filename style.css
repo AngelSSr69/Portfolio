@@ -95,11 +95,33 @@
   justify-items: center;
 }
 
+/* .project-card {
+  max-width: 300px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+} */
+
 .project-card {
   max-width: 300px;
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
+  /* Add these lines below */
+  background: rgba(255, 255, 255, 0.05); /* Gives the card a subtle glass-like base */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02); /* Lifts the card and grows it slightly */
+  background: rgba(255, 255, 255, 0.12);    /* Brightens the card background */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Adds a deep shadow for a 3D effect */
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 .project-h3 {
@@ -152,12 +174,72 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* 1. The Container: Sets the perspective for 3D */
+.skill-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+/* 2. The Inner Wrapper: This actually rotates */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Move shadow here */
+  border-radius: 8px;
+}
+
+/* 3. The Flip Action */
+.skill-card.is-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 4. Common styles for both faces */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hides the back side when flipped */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 5. Style the Front */
+.card-front {
+  color: black;
+}
+
+/* 6. Style the Back */
+.card-back {
+  background-color: #d4ebff;
+  color: #0029ff;
+  transform: rotateY(180deg); /* Initial state is flipped */
+}
+
+/* Back-side text styling */
+.skill-desc {
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .skill-card.active:hover {
   transform: translateY(-7px); /* Slightly increased to make it noticeable */
   background-color: #d4ebff;    /* Optional: change background on hover too */
+  /* Added a stronger shadow to create a "lift" effect on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .skill-img {
